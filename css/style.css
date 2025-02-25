@@ -165,7 +165,7 @@ main {
     display: block;
     padding: 20px;
   }
-  .header .nav .menu li:last-child a {
+  .header .nav .menu .menu-first li:last-child {
     padding-bottom: 40px;
   }
   .header .nav .menu .menu-first span {

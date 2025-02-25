@@ -19,7 +19,7 @@
   border: 2px solid #1f1f1f;
   text-align: center;
   position: relative;
-  z-index: 10;
+  z-index: 2;
 }
 .btn::before {
   content: "";
@@ -48,6 +48,19 @@
           transform-origin: 0% 50%;
   -webkit-transform: scaleX(1);
           transform: scaleX(1);
+}
+
+.fadein {
+  opacity: 0;
+  -webkit-transform: translateY(80px);
+          transform: translateY(80px);
+  -webkit-transition: all 1s ease;
+  transition: all 1s ease;
+}
+.fadein.inview {
+  opacity: 1;
+  -webkit-transform: translateY(0);
+          transform: translateY(0);
 }
 
 .mainvisual {
@@ -149,7 +162,7 @@
 .company .section-title {
   margin: 0 0 -5vw 4vw;
   position: relative;
-  z-index: 10;
+  z-index: 2;
 }
 .company .flex {
   display: -webkit-box;

@@ -39,3 +39,10 @@ $(function () {
     $(this).slideToggle();
   });
 });
+
+//fadein
+$(function () {
+  $(".fadein").on("inview", function () {
+    $(this).addClass("inview");
+  });
+});
