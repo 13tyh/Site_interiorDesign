@@ -2,12 +2,123 @@
 <html lang="ja">
   <head>
     <meta charset="UTF-8" />
+    <title>Interior Design</title>
+    <meta
+      name="description"
+      content="オリジナルインテリアのデザインや住空間、商業空間の空間デザインを行っています。人々が笑顔になるような価値ある空間を創造します。"
+    />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
+    <link rel="icon" href="img/common/favicon.ico" />
+    <link rel="apple-touch-icon" href="img/common/apple-touch-icon.png" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Zen+Kaku+Gothic+New:wght@400;500;700&family+Zen+Old+Mincho:wght@400&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="https://unpkg.com/ress/dist/ress.min.css" />
+    <link rel="stylesheet" href="css/style.css" />
+    <link rel="stylesheet" href="css/top.css" />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <script src="js/jquery.inview.min.js"></script>
+    <script src="js/main.js"></script>
   </head>
   <body>
-    <header class="header"></header>
-    <main></main>
+    <header class="header">
+      <h1 class="logo">
+        <a href="index.html">
+          <img src="img/common/logo.svg" alt="Interior Design" />
+        </a>
+      </h1>
+
+      <div class="hamburger">
+        <span></span>
+        <span></span>
+        <span></span>
+      </div>
+
+      <nav class="nav">
+        <ul class="menu">
+          <li class="menu-first">
+            <span>会社情報</span>
+            <ul class="menu-second">
+              <li><a href="company.html#philosophy">企業理念</a></li>
+              <li><a href="company.html#service">事業紹介</a></li>
+              <li><a href="company.html#overview">会社概要</a></li>
+              <li><a href="company.html#access">アクセス</a></li>
+            </ul>
+          </li>
+          <li><a href="products.html">商品一覧</a></li>
+          <li><a href="works.html">実績紹介</a></li>
+          <li><a href="faq.html">よくある質問</a></li>
+          <li class="menu-contact">
+            <a href="contact.html">お問い合わせ</a>
+          </li>
+        </ul>
+      </nav>
+
+      <div class="mask"></div>
+    </header>
+
+    <main>
+      <div class="mainvisual">
+        <ul class="fade-img">
+          <li><img src="img/top/mainvisual1.jpg" alt="" /></li>
+          <li><img src="img/top/mainvisual2.jpg" alt="" /></li>
+          <li><img src="img/top/mainvisual3.jpg" alt="" /></li>
+        </ul>
+        <p class="catchphrase">空間デザインで<br />新たな価値を創造する</p>
+      </div>
+
+      <section class="company">
+        <h2 class="section-title">COMPANY</h2>
+
+        <div class="flex">
+          <div class="img">
+            <img src="img/top/company.jpg" alt="" />
+          </div>
+
+          <div class="text">
+            <p class="title">新たな価値を創造する</p>
+            <p class="description">
+              私たちはインテリアを通して住居や店舗の空間をデザインし、その空間の中に新たな価値を創造します。
+            </p>
+            <a class="btn" href="company.html">VIEW MORE</a>
+          </div>
+        </div>
+      </section>
+
+      <section class="products">
+        <div class="text">
+          <h2 class="section-title">PRODUCTS</h2>
+          <p class="description">
+            私たちがデザインするインテリアをご紹介します。<br />ソファやデスク、チェア、ダイニング周りを中心にオリジナルのインテリアをご提案いたします。
+          </p>
+        </div>
+
+        <div class="products-list-area">
+          <ul class="products-list">
+            <li><img src="img/top/products1.jpg" alt="" /></li>
+            <li><img src="img/top/products2.jpg" alt="" /></li>
+            <li><img src="img/top/products3.jpg" alt="" /></li>
+            <li><img src="img/top/products4.jpg" alt="" /></li>
+            <li><img src="img/top/products5.jpg" alt="" /></li>
+            <li><img src="img/top/products6.jpg" alt="" /></li>
+          </ul>
+          <ul class="products-list">
+            <li><img src="img/top/products1.jpg" alt="" /></li>
+            <li><img src="img/top/products2.jpg" alt="" /></li>
+            <li><img src="img/top/products3.jpg" alt="" /></li>
+            <li><img src="img/top/products4.jpg" alt="" /></li>
+            <li><img src="img/top/products5.jpg" alt="" /></li>
+            <li><img src="img/top/products6.jpg" alt="" /></li>
+          </ul>
+        </div>
+
+        <a class="btn" href="products.html">VIEW MORE</a>
+      </section>
+    </main>
+
     <footer class="footer"></footer>
   </body>
 </html>

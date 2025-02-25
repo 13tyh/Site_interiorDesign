@@ -1,12 +1,9 @@
 @use "sass:map";
 
 $breakpoints: (
-  xs: "screen and (min-width: 550px)",
-  sp: "screen and (min-width: 551px) and (max-width: 767px)",
-  tablet: "screen and (min-width: 768px) and (max-width: 1024px)",
-  pc: "screen and (min-width: 1025px) and (max-width: 1280px)",
-  desktop: "screen and (min-width: 1281px) and (max-width: 1440px)",
-  lg: "screen and (min-width: 1441px)",
+  sp: "screen and (max-width: 767px)",
+  tb: "screen and (max-width: 1024px)",
+  pc: "screen and (min-width: 1025px)",
 );
 
 @mixin mq($breakpoint: pc) {

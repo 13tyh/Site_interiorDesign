@@ -1,0 +1,292 @@
+@charset 'utf-8';
+@use "mixin";
+
+//共通パーツ
+.section-title {
+  color: rgba(51, 51, 51, 0.9);
+  font-size: clamp(68px, 8vw, 130px);
+  font-weight: 700;
+  letter-spacing: 0.05em;
+}
+@include mixin.mq(sp) {
+  .section-title {
+    font-size: 12vw;
+  }
+}
+
+.btn {
+  max-width: 120px;
+  background-color: #fff;
+  display: block;
+  padding: 10px 0;
+  font-size: 12px;
+  border: 2px solid #1f1f1f;
+  text-align: center;
+  position: relative;
+  z-index: 10;
+
+  &::before {
+    content: "";
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: -10;
+    background-color: #1f1f1f;
+    transform-origin: 100% 50%;
+    transform: scaleX(0);
+    transition: transform ease 0.3s;
+  }
+
+  &:hover {
+    color: #fff;
+    opacity: 1;
+
+    &::before {
+      transform-origin: 0% 50%;
+      transform: scaleX(1);
+    }
+  }
+}
+
+// mainvisual
+.mainvisual {
+  height: 600px;
+  margin-bottom: 120px;
+  position: relative;
+
+  .fade-img {
+    img {
+      width: 100%;
+      height: 600px;
+      object-fit: cover;
+    }
+
+    li {
+      width: 70%;
+      position: absolute;
+      right: 0;
+      opacity: 0;
+      animation: fade 15s infinite;
+
+      &:nth-child(1) {
+        animation-delay: 0s;
+      }
+      &:nth-child(2) {
+        animation-delay: 5s;
+      }
+      &:nth-child(3) {
+        animation-delay: 10s;
+      }
+    }
+    @keyframes fade {
+      0% {
+        opacity: 0;
+      }
+      15% {
+        opacity: 1;
+      }
+      30% {
+        opacity: 1;
+      }
+      45% {
+        opacity: 0;
+      }
+      100% {
+        opacity: 0;
+      }
+    }
+  }
+
+  .catchphrase {
+    font-family: "Zen Old Mincho", serif;
+    font-size: 50px;
+    text-shadow: 1px 1px 3px #fff;
+    position: absolute;
+    top: 210px;
+    left: 6%;
+  }
+}
+@include mixin.mq(sp) {
+  .mainvisual {
+    height: 400px;
+    margin-bottom: 60px;
+
+    .fade-img {
+      img {
+        height: 400px;
+      }
+
+      li {
+        width: 100%;
+      }
+    }
+
+    .catchphrase {
+      color: #fff;
+      text-shadow: 1px 1px 1px #777;
+      font-size: 28px;
+      top: 300px;
+      left: 6%;
+    }
+  }
+}
+
+// company
+.company {
+  margin-bottom: 120px;
+
+  .section-title {
+    margin: 0 0 -5vw 4vw;
+    position: relative;
+    z-index: 10;
+  }
+
+  .flex {
+    display: flex;
+    align-items: center;
+
+    .img {
+      width: 65%;
+
+      img {
+        width: 100%;
+        height: 500px;
+        object-fit: cover;
+      }
+    }
+
+    .text {
+      width: 35%;
+      background-color: #fff;
+      padding: 5% 0 5% 5%;
+      margin-left: -8%;
+    }
+  }
+
+  .text {
+    .title {
+      font-family: "Zen Old Mincho", serif;
+      font-size: 24px;
+      margin-bottom: 40px;
+    }
+
+    .description {
+      font-size: 15px;
+      line-height: 1.8;
+      margin-bottom: 40px;
+    }
+  }
+}
+@include mixin.mq(sp) {
+  .company {
+    margin-bottom: 60px;
+
+    .section-title {
+      margin: 0 0 -7vw;
+      text-align: center;
+    }
+
+    .flex {
+      flex-direction: column;
+
+      .img {
+        width: 100%;
+
+        img {
+          height: 300px;
+        }
+      }
+
+      .text {
+        width: 100%;
+        margin-left: 0;
+        padding: 20px 20px 0;
+
+        .title {
+          font-size: 20px;
+          margin-bottom: 20px;
+        }
+
+        .description {
+          margin-bottom: 20px;
+        }
+      }
+    }
+  }
+}
+
+// products
+.products {
+  margin-bottom: 120px;
+  position: relative;
+
+  &::after {
+    content: "";
+    width: 70%;
+    height: 300px;
+    background-color: #fafafa;
+    display: block;
+    position: absolute;
+    top: 6vw;
+    right: 0;
+    z-index: -10;
+  }
+
+  .text {
+    width: 70%;
+    padding: 0 5%;
+    margin-left: auto;
+
+    .section-title {
+      margin-bottom: 30px;
+    }
+
+    .description {
+      font-size: 15px;
+      line-height: 1.8;
+      margin-bottom: 60px;
+    }
+  }
+
+  .products-list-area {
+    display: flex;
+    margin-bottom: 40px;
+    overflow-x: hidden;
+
+    .products-list {
+      display: flex;
+      animation: slide-left 60s infinite linear both;
+
+      li {
+        width: calc(100vw / 3);
+
+        img {
+          width: 100%;
+
+          &:hover {
+            transform: translateY(-10px);
+          }
+        }
+      }
+      @keyframes slide-left {
+        0% {
+          transform: translateX(0);
+        }
+        100% {
+          transform: translateX(-100%);
+        }
+      }
+    }
+    &:hover {
+      .products-list {
+        animation-play-state: paused;
+      }
+    }
+  }
+
+  .btn {
+    margin: 0 auto;
+  }
+}
