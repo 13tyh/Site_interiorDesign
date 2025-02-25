@@ -7,8 +7,10 @@ html {
   scroll-behavior: smooth;
   scroll-padding-top: 80px;
 }
-@include mixin.mq(sp) {
-  scroll-padding-top: 60px;
+@include mixin.mq(tb) {
+  html {
+    croll-padding-top: 60px;
+  }
 }
 body {
   color: #1f1f1f;
