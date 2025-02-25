@@ -167,15 +167,13 @@ main {
           }
         }
 
-        li {
-          &:last-child {
-            a {
+        .menu-first {
+          li {
+            &:last-child {
               padding-bottom: calc(20px + 20px);
             }
           }
-        }
 
-        .menu-first {
           span {
             display: block;
             padding: 20px;
@@ -297,6 +295,91 @@ main {
           transform: rotate(45deg);
         }
       }
+    }
+  }
+}
+
+//footer
+.footer {
+  display: flex;
+  justify-content: space-between;
+  background-color: #1f1f1f;
+  color: #fff;
+  padding: 80px 5%;
+
+  a {
+    color: #fff;
+  }
+
+  .info-area {
+    width: 35%;
+
+    .logo {
+      width: 100%;
+      max-width: 220px;
+      display: block;
+      line-height: 0;
+      margin-bottom: 30px;
+    }
+
+    .info {
+      font-size: 14px;
+      line-height: 1.8;
+      margin-bottom: 30px;
+    }
+
+    .copyright {
+      font-size: 10px;
+    }
+  }
+
+  .menu-area {
+    width: 65%;
+    display: flex;
+    justify-content: flex-end;
+
+    .menu-col {
+      width: 100%;
+      max-width: 130px;
+
+      .menu-title {
+        font-size: 15px;
+        font-weight: 500;
+        margin-bottom: 30px;
+      }
+
+      .menu-list {
+        li {
+          font-size: 14px;
+          margin-bottom: 20px;
+
+          &::before {
+            content: "-";
+            margin-right: 10px;
+          }
+        }
+      }
+    }
+  }
+}
+@include mixin.mq(sp) {
+  .footer {
+    flex-direction: column-reverse;
+    padding: 60px 20px;
+
+    .info-area {
+      width: 100%;
+      text-align: center;
+
+      .logo {
+        margin: 0 auto 30px;
+      }
+    }
+
+    .menu-area {
+      width: 100%;
+      justify-content: center;
+      margin-bottom: 40px;
     }
   }
 }
