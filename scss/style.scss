@@ -4,6 +4,11 @@
 //reset.css\
 html {
   font-size: 100%;
+  scroll-behavior: smooth;
+  scroll-padding-top: 80px;
+}
+@include mixin.mq(sp) {
+  scroll-padding-top: 60px;
 }
 body {
   color: #1f1f1f;
@@ -293,6 +298,79 @@ main {
         &:nth-child(3) {
           top: 24px;
           transform: rotate(45deg);
+        }
+      }
+    }
+  }
+}
+
+// page-header
+.page-header {
+  margin-bottom: 80px;
+  position: relative;
+
+  .img {
+    width: 100%;
+
+    img {
+      width: 100%;
+      height: 320px;
+      object-fit: cover;
+    }
+  }
+
+  .page-title-area {
+    width: 100%;
+    max-width: 400px;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    background-color: rgba(51, 51, 51, 0.9);
+    color: #fff;
+    position: absolute;
+    padding: 0 4%;
+    top: 0;
+    left: 0;
+
+    .page-title {
+      .en {
+        display: block;
+        font-size: 46px;
+        font-weight: 500;
+        letter-spacing: 0.05em;
+      }
+
+      .ja {
+        display: block;
+        font-size: 14px;
+        font-weight: 400;
+      }
+    }
+  }
+}
+@include mixin.mq(sp) {
+  .page-header {
+    margin-bottom: 40px;
+
+    .img {
+      img {
+        height: 240px;
+      }
+    }
+
+    .page-title-area {
+      width: 100%;
+      height: 70px;
+      top: auto;
+      bottom: 0;
+
+      .page-title {
+        .en {
+          font-size: 24px;
+        }
+
+        .ja {
+          font-size: 12px;
         }
       }
     }
