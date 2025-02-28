@@ -50,3 +50,210 @@
     }
   }
 }
+
+.section-title {
+  font-size: 16px;
+  font-weight: 500;
+  margin-bottom: 60px;
+  position: relative;
+
+  &::before {
+    content: "";
+    width: calc((100% - 1000px) / 2);
+    height: 1px;
+    background-color: #1f1f1f;
+    position: absolute;
+    top: 12px;
+    left: 0;
+  }
+
+  span {
+    max-width: 1000px;
+    display: block;
+    padding: 0 20px;
+    margin: 0 auto;
+  }
+}
+@include mixin.mq(tb) {
+  .section-title {
+    margin-bottom: 10px;
+
+    &::before {
+      content: none;
+    }
+  }
+}
+
+.philosophy {
+  margin-bottom: 120px;
+  overflow: hidden;
+  position: relative;
+
+  .text-area {
+    width: 70%;
+    background-color: #fafafa;
+    padding: 7% 0 10% 6%;
+    margin-top: 60px;
+
+    .inner {
+      width: clamp(250px, 34vw, 350px);
+
+      .title {
+        font-family: "Zen Old Mincho", serif;
+        font-size: 24px;
+        line-height: 1.8;
+        margin-bottom: 40px;
+      }
+
+      .text {
+        font-size: 15px;
+        line-height: 2;
+        margin-bottom: 30px;
+      }
+    }
+  }
+
+  .img-top {
+    width: clamp(390px, 50vw, 460px);
+    position: absolute;
+    top: 70px;
+    left: 50%;
+  }
+
+  .img-bottom {
+    max-width: 200px;
+    margin: -60px 0 0 10%;
+  }
+}
+@include mixin.mq(sp) {
+  .philosophy {
+    margin-bottom: 60px;
+    position: static;
+
+    .text-area {
+      width: 100%;
+      padding: 20px;
+      margin: 0 0 20px;
+
+      .inner {
+        width: 100%;
+      }
+    }
+
+    .img-top {
+      width: 100%;
+      margin-bottom: 20px;
+      position: static;
+    }
+
+    .img-bottom {
+      max-width: 100%;
+      margin: 0 auto;
+      text-align: center;
+    }
+  }
+}
+
+.service {
+  margin-bottom: 120px;
+
+  .item {
+    display: flex;
+    align-items: center;
+    box-shadow: 5px 5px 25px #ccc;
+    margin-bottom: 40px;
+
+    .text {
+      width: 44%;
+      padding: 1% 5%;
+
+      .title-ja {
+        font-size: 12px;
+        margin-bottom: 5px;
+      }
+
+      .title-en {
+        font-size: 32px;
+        font-weight: 500;
+        margin-bottom: 20px;
+      }
+
+      .description {
+        font-size: 14px;
+        margin-bottom: 20px;
+      }
+
+      .view-more {
+        font-size: 14px;
+        text-align: right;
+        text-decoration: underline;
+      }
+    }
+
+    .img {
+      width: 56%;
+      overflow: hidden;
+
+      &:hover {
+        img {
+          transform: scale(1.1);
+        }
+      }
+
+      img {
+        transition: transform 0.8s ease;
+      }
+    }
+
+    &.interior {
+      .title-en {
+        font-size: 28px;
+      }
+
+      .img {
+        clip-path: polygon(20% 0, 100% 0, 100% 100%, 0 100%);
+      }
+    }
+
+    &.store {
+      flex-direction: row-reverse;
+
+      .img {
+        clip-path: polygon(0 0, 100% 0, 80% 100%, 0 100%);
+      }
+    }
+  }
+}
+@include mixin.mq(sp) {
+  .service {
+    margin-bottom: 60px;
+
+    .item {
+      flex-direction: column;
+
+      &.store {
+        flex-direction: column;
+      }
+
+      .text {
+        width: 100%;
+        padding: 20px;
+
+        .title-en {
+          font-size: 26px;
+        }
+      }
+
+      .img {
+        width: 100%;
+      }
+
+      &.interior,
+      &.store {
+        .img {
+          clip-path: none;
+        }
+      }
+    }
+  }
+}
