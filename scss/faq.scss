@@ -1,0 +1,112 @@
+@charset 'utf-8';
+@use "mixin";
+
+.faq-list {
+  padding: 0 20px;
+  .item {
+    dt {
+      display: flex;
+      cursor: pointer;
+      font-size: 15px;
+      line-height: 1.8;
+      padding: 40px 0;
+      position: relative;
+      border-top: 1px solid #1f1f1f;
+
+      &::before {
+        position: absolute;
+        content: "";
+        width: 15px;
+        height: 1px;
+        background-color: #1f1f1f;
+        top: 52px;
+        right: 5px;
+      }
+      &::after {
+        position: absolute;
+        content: "";
+        width: 1px;
+        height: 15px;
+        background-color: #1f1f1f;
+        top: 45px;
+        right: 12px;
+        left: auto;
+      }
+
+      &.active {
+        &::after {
+          content: none;
+        }
+      }
+
+      .question {
+        width: 30px;
+        height: 30px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-shrink: 0;
+        background-color: #1f1f1f;
+        border-radius: 50%;
+        color: #fff;
+        font-size: 14px;
+        margin-right: 100px;
+      }
+    }
+
+    dd {
+      display: flex;
+      font-size: 15px;
+      line-height: 1.8;
+      padding-bottom: 40px;
+
+      a {
+        text-decoration: underline;
+      }
+
+      .answer {
+        width: 30px;
+        height: 30px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        border-radius: 50%;
+        background-color: #1f1f1f;
+        color: #fff;
+        flex-shrink: 0;
+        font-size: 14px;
+        margin-right: 100px;
+      }
+    }
+  }
+}
+@include mixin.mq(sp) {
+  .faq-list {
+    margin: 0 auto 20px;
+
+    .item {
+      dt {
+        padding: 30px 0;
+
+        &::before {
+          top: 32px;
+        }
+        &::after {
+          top: 25px;
+        }
+
+        .question {
+          margin-right: 20px;
+        }
+      }
+
+      dd {
+        padding-bottom: 30px;
+
+        .answer {
+          margin-right: 20px;
+        }
+      }
+    }
+  }
+}

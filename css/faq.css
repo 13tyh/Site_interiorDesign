@@ -1,0 +1,111 @@
+.faq-list {
+  padding: 0 20px;
+}
+.faq-list .item dt {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  cursor: pointer;
+  font-size: 15px;
+  line-height: 1.8;
+  padding: 40px 0;
+  position: relative;
+  border-top: 1px solid #1f1f1f;
+}
+.faq-list .item dt::before {
+  position: absolute;
+  content: "";
+  width: 15px;
+  height: 1px;
+  background-color: #1f1f1f;
+  top: 52px;
+  right: 5px;
+}
+.faq-list .item dt::after {
+  position: absolute;
+  content: "";
+  width: 1px;
+  height: 15px;
+  background-color: #1f1f1f;
+  top: 45px;
+  right: 12px;
+  left: auto;
+}
+.faq-list .item dt.active::after {
+  content: none;
+}
+.faq-list .item dt .question {
+  width: 30px;
+  height: 30px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -ms-flex-negative: 0;
+      flex-shrink: 0;
+  background-color: #1f1f1f;
+  border-radius: 50%;
+  color: #fff;
+  font-size: 14px;
+  margin-right: 100px;
+}
+.faq-list .item dd {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  font-size: 15px;
+  line-height: 1.8;
+  padding-bottom: 40px;
+}
+.faq-list .item dd a {
+  text-decoration: underline;
+}
+.faq-list .item dd .answer {
+  width: 30px;
+  height: 30px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  border-radius: 50%;
+  background-color: #1f1f1f;
+  color: #fff;
+  -ms-flex-negative: 0;
+      flex-shrink: 0;
+  font-size: 14px;
+  margin-right: 100px;
+}
+
+@media screen and (max-width: 767px) {
+  .faq-list {
+    margin: 0 auto 20px;
+  }
+  .faq-list .item dt {
+    padding: 30px 0;
+  }
+  .faq-list .item dt::before {
+    top: 32px;
+  }
+  .faq-list .item dt::after {
+    top: 25px;
+  }
+  .faq-list .item dt .question {
+    margin-right: 20px;
+  }
+  .faq-list .item dd {
+    padding-bottom: 30px;
+  }
+  .faq-list .item dd .answer {
+    margin-right: 20px;
+  }
+}
