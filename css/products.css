@@ -1,0 +1,111 @@
+.tab-list {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  padding: 0 20px;
+  margin-bottom: 40px;
+}
+.tab-list li {
+  padding-top: 10px;
+  width: 100%;
+  max-width: 150px;
+  height: 40px;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  border-top: 1px solid #1f1f1f;
+  border-right: 1px solid #1f1f1f;
+  border-left: 1px solid #1f1f1f;
+  cursor: pointer;
+  font-size: 14px;
+  margin-right: 10px;
+  text-align: center;
+  -webkit-transition: all 0.3s ease;
+  transition: all 0.3s ease;
+}
+.tab-list li:last-child {
+  margin-right: 0;
+}
+.tab-list li:hover {
+  background-color: #1f1f1f;
+  color: #fff;
+}
+.tab-list li.active {
+  background-color: #1f1f1f;
+  color: #fff;
+}
+
+.products-list {
+  padding: 0 20px;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 12px;
+  margin-bottom: 120px;
+  display: none;
+}
+.products-list.active {
+  display: grid;
+}
+.products-list li {
+  position: relative;
+}
+.products-list li .info {
+  width: 100%;
+  height: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  background-color: rgba(0, 0, 0, 0.6);
+  color: #fff;
+  position: absolute;
+  top: 0;
+  left: 0;
+  opacity: 0;
+  -webkit-transition: all 0.6s ease;
+  transition: all 0.6s ease;
+}
+.products-list li .info .name {
+  font-size: 16px;
+  margin-bottom: 50px;
+}
+.products-list li .info .price {
+  font-size: 14px;
+}
+.products-list li:hover .info {
+  opacity: 1;
+}
+
+@media screen and (max-width: 1024px) {
+  .products-list {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+@media screen and (max-width: 767px) {
+  .tab-list {
+    margin-bottom: 10px;
+  }
+  .tab-list li {
+    padding-top: 12px;
+    font-size: 10px;
+    margin-right: 5px;
+  }
+  .products-list {
+    grid-template-columns: repeat(2, 1fr);
+    margin-bottom: 60px;
+  }
+}
