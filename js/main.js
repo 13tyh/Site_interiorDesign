@@ -87,3 +87,24 @@ $(function () {
     $(".products-list.dining").addClass("active");
   });
 });
+
+//Worksのモーダル
+$(function () {
+  $(".work1 .modal-open").click(function () {
+    $("body").css("overflow-y", "hidden");
+    $(".work1 .modal-container").addClass("active");
+  });
+  $(".work2 .modal-open").click(function () {
+    $("body").css("overflow-y", "hidden");
+    $(".work2 .modal-container").addClass("active");
+  });
+  $(".work3 .modal-open").click(function () {
+    $("body").css("overflow-y", "hidden");
+    $(".work3 .modal-container").addClass("active");
+  });
+
+  $(".modal-close").click(function () {
+    $("body").css("overflow-y", "auto");
+    $(".modal-container").removeClass("active");
+  });
+});

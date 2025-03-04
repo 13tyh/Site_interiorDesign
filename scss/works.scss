@@ -1,0 +1,142 @@
+@charset "utf-8";
+@use "mixin";
+
+.works-list {
+  margin-bottom: 120px;
+
+  li {
+    display: flex;
+    align-items: center;
+    border-top: 1px solid #1f1f1f;
+
+    &:last-child {
+      border-bottom: 1px solid #1f1f1f;
+    }
+
+    .img {
+      width: 50%;
+
+      img {
+        width: 100%;
+        height: 400px;
+        object-fit: cover;
+      }
+    }
+
+    .text {
+      width: 50%;
+      padding: 0 5%;
+
+      .name {
+        font-weight: 500;
+        margin-bottom: 40px;
+      }
+
+      .info {
+        margin-bottom: 40px;
+
+        .item {
+          display: flex;
+          font-size: 14px;
+          margin-bottom: 5px;
+
+          dt {
+            margin-right: 5px;
+          }
+        }
+      }
+
+      .modal-open {
+        width: 130px;
+        background-color: #1f1f1f;
+        color: #fff;
+        cursor: pointer;
+        font-size: 12px;
+        padding: 10px 15px;
+        position: relative;
+
+        img {
+          max-width: 16px;
+          position: absolute;
+          top: 11px;
+          right: 11px;
+        }
+      }
+    }
+
+    .modal-container {
+      width: 100%;
+      height: 100%;
+      position: fixed;
+      top: 0;
+      left: 0;
+      background-color: rgba(0, 0, 0, 50%);
+      padding: 80px 20px;
+      text-align: center;
+      overflow: auto;
+      opacity: 0;
+      visibility: hidden;
+      transition: 0.3s;
+      z-index: 20;
+
+      &.active {
+        opacity: 1;
+        visibility: visible;
+      }
+    }
+
+    .modal-content {
+      width: 100%;
+      max-width: 860px;
+      background-color: #fff;
+      display: inline-block;
+      padding: 80px;
+      position: relative;
+
+      .modal-name {
+        margin-bottom: 20px;
+        text-align-last: left;
+      }
+
+      .modal-img {
+        img {
+          margin-bottom: 20px;
+        }
+      }
+
+      .modal-close {
+        cursor: pointer;
+        position: absolute;
+        top: 20px;
+        right: 20px;
+
+        img {
+          max-width: 25px;
+        }
+      }
+    }
+  }
+}
+
+@include mixin.mq(sp) {
+  .works-list {
+    margin-bottom: 60px;
+
+    li {
+      flex-direction: column;
+
+      .img {
+        width: 100%;
+      }
+
+      .text {
+        width: 100%;
+        padding: 20px;
+      }
+
+      .modal-content {
+        padding: 40px 20px;
+      }
+    }
+  }
+}

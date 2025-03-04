@@ -306,6 +306,20 @@ main {
   }
 }
 
+//main
+.head-text {
+  font-size: 15px;
+  line-height: 2;
+  padding: 0 20px;
+  margin-bottom: 80px;
+  text-align: center;
+}
+@include mixin.mq(sp) {
+  .head-text {
+    margin-bottom: 40px;
+  }
+}
+
 // page-header
 .page-header {
   margin-bottom: 80px;
